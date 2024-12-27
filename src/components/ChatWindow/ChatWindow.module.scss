@@ -1,0 +1,13 @@
+.chatWindow {
+  margin: 0;
+  height: 75vh;
+  max-height: 60rem;
+  display: flex;
+  flex-direction: column;
+  justify-content: start;
+  gap: 16px;
+  overflow: auto;
+  list-style: none;
+  padding: 1.2rem;
+  text-align: start;
+}

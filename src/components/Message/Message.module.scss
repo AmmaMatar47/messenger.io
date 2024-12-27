@@ -1,0 +1,23 @@
+.messageItem {
+  padding: 0.8rem;
+  width: fit-content;
+  max-width: 70%;
+  border-radius: 8px;
+
+  font-size: 1.6rem;
+  font-weight: 600;
+}
+
+.messageText {
+  margin: 0;
+  overflow-wrap: break-word;
+}
+
+.localMessenger {
+  background-color: rgb(13, 178, 145);
+  align-self: end;
+}
+
+.remoteMessenger {
+  background-color: #333;
+}
