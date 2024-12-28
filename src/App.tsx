@@ -7,10 +7,8 @@ function App() {
   return (
     <div className={styles.messengerContainer}>
       <MessagesProvider>
-        <>
-          <ChatWindow />
-          <MessageInput />
-        </>
+        <ChatWindow />
+        <MessageInput />
       </MessagesProvider>
     </div>
   );

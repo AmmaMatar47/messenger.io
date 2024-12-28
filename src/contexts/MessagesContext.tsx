@@ -1,7 +1,6 @@
 // Hooks
 import { createContext, useContext, useEffect, useState } from 'react';
 
-///////////////////////////////////////////////////////////////
 // Types
 export interface MessageInfo<T> {
   message: string;
@@ -23,11 +22,9 @@ interface MessagesContextValue {
   setRemoteIsTyping: React.Dispatch<React.SetStateAction<boolean>>;
 }
 
-const PROGRAMMING_QUOTE_URL = 'https://programming-quotes-api.azurewebsites.net/api/quotes/random';
-
 const MessagesContext = createContext<MessagesContextValue | null>(null);
 
-const MessagesProvider = ({ children }: { children: JSX.Element }) => {
+const MessagesProvider = ({ children }: { children: JSX.Element[] }) => {
   // States
   const [sendedMessages, setSendedMessages] = useState<MessageInfo<'sended'>[]>([]);
   const [receivedMessages, setReceivedMessages] = useState<MessageInfo<'received'>[]>([]);
@@ -40,7 +37,7 @@ const MessagesProvider = ({ children }: { children: JSX.Element }) => {
     const fetchRandomText = async () => {
       try {
         setRemoteIsTyping(true);
-        const res = await fetch(PROGRAMMING_QUOTE_URL);
+        const res = await fetch(import.meta.env.VITE_PROGRAMMING_QUOTE_URL);
         const data = await res.json();
 
         setReceivedMessages(messages => [
